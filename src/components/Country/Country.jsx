@@ -1,22 +1,19 @@
-import { useState } from "react";
+import { useRef } from "react";
+import Modal from "../Modal/Modal";
 import "./Country.css";
+
 const Country = ({ country }) => {
   const flagUrl = country.flags.flags.png;
-  const [visited, setVisited] = useState(false);
-  const handleVisited = () => {
-    setVisited(!visited);
-  };
+  const modalRef = useRef(null);
+  console.log(country);
   return (
-    <div className={`country ${visited && "country-visited"} `}>
-      <img src={flagUrl} alt={country.flags.flags.alt} />
-      <h4>Name: {country.name.common} </h4>
-      <p>
-        Area: {country.area.area} km²{" "}
-        {country.area.area > 300000 ? "Big Country" : "Small Country"}
-      </p>
-      <button onClick={handleVisited}>
-        {visited ? "Visited" : "Mark as Visited"}
-      </button>
+    <div className="country">
+      <img src={flagUrl} alt={country.name.common} />
+      <div className="country-info">
+        <h4>{country.name.common}</h4>
+        <button onClick={() => modalRef.current?.showModal()}>Details</button>
+        <Modal country={country} modalRef={modalRef} />
+      </div>
     </div>
   );
 };

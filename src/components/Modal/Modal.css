@@ -1,0 +1,121 @@
+.country-modal {
+  border: none;
+  border-radius: 16px;
+  padding: 0;
+  width: 520px;
+  max-width: 90vw;
+  background: #161b22;
+  color: #e6edf3;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.country-modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  padding: 24px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Hero section */
+.modal-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.modal-hero img {
+  width: 120px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.modal-hero-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal-code {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #d4a843;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.modal-hero h2 {
+  font-size: 22px;
+  color: #e6edf3;
+  margin-bottom: 4px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.modal-official {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+/* Stats grid */
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px; /* ← add this */
+}
+
+.modal-stat {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-stat.full-width {
+  grid-column: span 2;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #8b949e;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 15px;
+  color: #e6edf3;
+  font-weight: 500;
+}
+
+/* Close button */
+.modal-close {
+  width: 100%;
+
+  padding: 12px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #8b949e;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: #30363d;
+  color: #e6edf3;
+}
